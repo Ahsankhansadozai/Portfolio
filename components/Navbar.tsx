@@ -51,8 +51,8 @@ export default function Navbar() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-                        ? "glass-strong shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
-                        : "bg-transparent"
+                    ? "glass-strong shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
+                    : "bg-transparent"
                     }`}
             >
                 <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -76,14 +76,14 @@ export default function Navbar() {
                                 <button
                                     key={link.label}
                                     onClick={() => scrollTo(link.href)}
-                                    className={`relative text-sm font-medium font-[var(--font-space-grotesk)] transition-colors duration-200 group ${isActive
-                                            ? "text-[#00ff87]"
-                                            : "text-[rgba(232,232,240,0.7)] hover:text-white"
+                                    className={`relative text-sm font-medium transition-colors duration-200 group ${isActive
+                                        ? "text-[#00ff87]"
+                                        : "text-[rgba(232,232,240,0.7)] hover:text-white"
                                         }`}
                                 >
                                     {link.label}
                                     <span
-                                        className={`absolute -bottom-1 left-0 h-px bg-gradient-to-r from-[#00ff87] to-[#00d4ff] transition-all duration-300 ${isActive ? "w-full" : "w-0 group-hover:w-full"
+                                        className={`absolute -bottom-1 left-0 h-px bg-linear-to-r from-[#00ff87] to-[#00d4ff] transition-all duration-300 ${isActive ? "w-full" : "w-0 group-hover:w-full"
                                             }`}
                                     />
                                 </button>
@@ -130,8 +130,8 @@ export default function Navbar() {
                                     transition={{ delay: i * 0.07 }}
                                     onClick={() => scrollTo(link.href)}
                                     className={`text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200 ${activeSection === link.href.slice(1)
-                                            ? "text-[#00ff87] bg-[rgba(0,255,135,0.08)]"
-                                            : "text-[rgba(232,232,240,0.8)] hover:text-white hover:bg-[rgba(255,255,255,0.04)]"
+                                        ? "text-[#00ff87] bg-[rgba(0,255,135,0.08)]"
+                                        : "text-[rgba(232,232,240,0.8)] hover:text-white hover:bg-[rgba(255,255,255,0.04)]"
                                         }`}
                                 >
                                     {link.label}
