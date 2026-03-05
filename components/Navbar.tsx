@@ -61,7 +61,7 @@ export default function Navbar() {
                         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="font-mono text-lg font-bold"
+                        className="font-mono text-2xl font-bold"
                     >
                         <span className="text-[rgba(255,255,255,0.3)]">&lt;</span>
                         <span className="gradient-text">AhsanEjaz</span>
@@ -76,7 +76,7 @@ export default function Navbar() {
                                 <button
                                     key={link.label}
                                     onClick={() => scrollTo(link.href)}
-                                    className={`relative text-sm font-medium transition-colors duration-200 group ${isActive
+                                    className={`cursor-pointer  relative text-sm font-medium transition-colors duration-200 group ${isActive
                                         ? "text-[#00ff87]"
                                         : "text-[rgba(232,232,240,0.7)] hover:text-white"
                                         }`}
@@ -93,7 +93,7 @@ export default function Navbar() {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             onClick={() => scrollTo("#contact")}
-                            className="btn-primary text-sm px-5 py-2.5"
+                            className="cursor-pointer btn-primary text-sm px-5 py-2.5"
                         >
                             <span>Hire Me</span>
                         </motion.button>
@@ -140,7 +140,7 @@ export default function Navbar() {
                             <div className="mt-2 px-4 pb-2">
                                 <button
                                     onClick={() => scrollTo("#contact")}
-                                    className="btn-primary w-full text-sm text-center"
+                                    className="cursor-pointer btn-primary w-full text-sm text-center"
                                 >
                                     <span>Hire Me</span>
                                 </button>
