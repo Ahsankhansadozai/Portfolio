@@ -9,51 +9,65 @@ const skillCategories = [
         color: "#00ff87",
         skills: [
             { name: "Kotlin", level: 95 },
-            { name: "Java", level: 85 },
-            { name: "XML", level: 90 },
+            { name: "Java", level: 90 },
+            { name: "Dart", level: 88 },
+            { name: "JSON / XML / HTML Parsing", level: 85 },
         ],
     },
+
     {
-        title: "Jetpack & Frameworks",
+        title: "Flutter Development",
         color: "#00d4ff",
         skills: [
-            { name: "Jetpack Compose", level: 92 },
-            { name: "Navigation", level: 90 },
-            { name: "Room DB", level: 88 },
-            { name: "WorkManager", level: 82 },
-            { name: "Hilt / DI", level: 88 },
-            { name: "Coroutines / Flow", level: 90 },
-            { name: "LiveData / ViewModel", level: 92 },
-            { name: "DataStore", level: 85 },
+            { name: "Flutter Widget Lifecycle", level: 90 },
+            { name: "Stateful & Stateless Widgets", level: 92 },
+            { name: "Layout System (Row, Column, Stack)", level: 90 },
+            { name: "Custom Widgets Development", level: 88 },
+            { name: "State Management (Provider, Riverpod, Bloc, GetX)", level: 85 },
         ],
     },
+
     {
-        title: "Architecture",
+        title: "Android Development",
         color: "#a78bfa",
         skills: [
-            { name: "MVVM", level: 95 },
-            { name: "MVI", level: 80 },
-            { name: "Clean Architecture", level: 88 },
+            { name: "Jetpack Components", level: 90 },
+            { name: "Room DB / SQLite", level: 88 },
+            { name: "Constraint / Motion / Linear Layout", level: 90 },
+            { name: "Dependency Injection (Hilt)", level: 88 },
+            { name: "MVVM / MVC Architecture", level: 92 },
         ],
     },
+
     {
-        title: "Tools & Cloud",
+        title: "Backend & APIs",
         color: "#f59e0b",
         skills: [
-            { name: "Android Studio", level: 96 },
-            { name: "Firebase", level: 85 },
-            { name: "Git / GitHub", level: 92 },
-            { name: "Gradle", level: 80 },
-            { name: "Postman", level: 78 },
+            { name: "RESTful API Integration", level: 92 },
+            { name: "HTTP Networking (Dio / http)", level: 88 },
+            { name: "Authentication (JWT / OAuth)", level: 85 },
+            { name: "WebSockets & Real-time Communication", level: 82 },
         ],
     },
+
     {
-        title: "Testing",
+        title: "Databases & Storage",
         color: "#ec4899",
         skills: [
-            { name: "JUnit", level: 85 },
-            { name: "Espresso", level: 75 },
-            { name: "Mockito", level: 80 },
+            { name: "Firebase (Auth, Firestore, FCM)", level: 90 },
+            { name: "Realtime Database", level: 85 },
+            { name: "Local Storage (Hive / SharedPreferences)", level: 88 },
+            { name: "Secure Storage", level: 85 },
+        ],
+    },
+
+    {
+        title: "Architecture & Engineering",
+        color: "#22c55e",
+        skills: [
+            { name: "Clean Architecture", level: 92 },
+            { name: "Repository Pattern", level: 90 },
+            { name: "SOLID Principles", level: 88 },
         ],
     },
 ];
@@ -100,13 +114,11 @@ function SkillCard({ category, index }: { category: (typeof skillCategories)[0];
                 transform: hovered ? "translateY(-4px)" : undefined,
             }}
         >
-            {/* Top accent bar */}
             <div
                 className="h-0.5 w-full rounded-full mb-5"
                 style={{ background: `linear-gradient(90deg, ${category.color}, transparent)` }}
             />
 
-            {/* Glow on hover */}
             <div
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
                 style={{ background: `radial-gradient(circle at 0% 0%, ${category.color}06 0%, transparent 60%)` }}
@@ -139,9 +151,23 @@ export default function Skills() {
     const headerRef = useRef(null);
     const headerInView = useInView(headerRef, { amount: 0.1, once: true });
 
+    const techCloud = [
+        "SignalR Integration",
+        "Modularization (Multi-Module Apps)",
+        "Unidirectional Data Flow (UDF)",
+        "CI/CD Pipelines",
+        "Git Version Control",
+        "Jira",
+        "App Store / Play Store Deployment",
+        "Push Notifications",
+        "Payment Gateways (Stripe / In-App Purchase)",
+        "Agora Audio & Video Calling",
+        "Maps & Geolocation Services",
+        "Google Ads & Huawei Ads",
+    ];
+
     return (
         <section id="skills" className="py-28 relative">
-            {/* Background */}
             <div className="absolute inset-0 dot-bg opacity-40 pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
@@ -163,30 +189,26 @@ export default function Skills() {
                     </p>
                 </motion.div>
 
-                {/* Skill Cards Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                     {skillCategories.map((cat, i) => (
                         <SkillCard key={cat.title} category={cat} index={i} />
                     ))}
                 </div>
 
-                {/* Tech cloud */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={headerInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.5 }}
                     className="mt-14 flex flex-wrap justify-center gap-3"
                 >
-                    {["Android SDK", "Retrofit", "OkHttp", "Accompanist", "Glide/Coil", "MPAndroidChart",
-                        "Material Design 3", "Health Connect", "Google Fit API", "Razorpay SDK", "Play Billing",
-                        "Crashlytics", "FCM"].map((tech) => (
-                            <span
-                                key={tech}
-                                className="glass px-4 py-2 rounded-full text-xs font-medium text-[rgba(232,232,240,0.6)] border border-[rgba(255,255,255,0.06)] hover:border-[rgba(0,255,135,0.3)] hover:text-[#00ff87] transition-all duration-200 cursor-default"
-                            >
-                                {tech}
-                            </span>
-                        ))}
+                    {techCloud.map((tech) => (
+                        <span
+                            key={tech}
+                            className="glass px-4 py-2 rounded-full text-xs md:text-sm font-medium text-[rgba(232,232,240,0.6)] border border-[rgba(255,255,255,0.06)] hover:border-[rgba(0,255,135,0.3)] hover:text-[#00ff87] transition-all duration-200 cursor-default"
+                        >
+                            {tech}
+                        </span>
+                    ))}
                 </motion.div>
             </div>
         </section>
