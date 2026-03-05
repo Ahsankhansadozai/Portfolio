@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Code2, Smartphone, TrendingUp } from "lucide-react";
+import Image from "next/image";
 
 const stats = [
     { icon: TrendingUp, value: 5, suffix: "+", label: "Years Experience", color: "#00ff87" },
@@ -87,39 +88,14 @@ export default function About() {
                             <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden border-2 border-[rgba(0,255,135,0.3)] glow-green"
                                 style={{ background: "linear-gradient(135deg, #111118, #0d0d14)" }}
                             >
-                                {/* Avatar placeholder with initials */}
-                                <div className="w-full h-full flex flex-col items-center justify-center"
-                                    style={{ background: "linear-gradient(135deg, #111118 0%, #1a1a2e 100%)" }}
-                                >
-                                    <div className="w-24 h-24 rounded-full mb-3"
-                                        style={{ background: "linear-gradient(135deg, #00ff87, #00d4ff)" }}
-                                    >
-                                        <div className="w-full h-full rounded-full flex items-center justify-center text-3xl font-bold text-[#0a0a0f]"
-                                            style={{ fontFamily: "var(--font-space-grotesk)" }}
-                                        >
-                                            AE
-                                        </div>
-                                    </div>
-                                    <span className="text-[rgba(232,232,240,0.4)] text-sm">Senior Android Dev</span>
-                                </div>
-
-                                {/* Scan line effect */}
-                                <div className="absolute inset-0 pointer-events-none"
-                                    style={{
-                                        background: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,135,0.015) 2px, rgba(0,255,135,0.015) 4px)"
-                                    }}
+                                {/* Avatar */}
+                                <Image
+                                    src="/myImg.png"
+                                    alt="Ahsan Ejaz"
+                                    fill
+                                    className="object-cover"
                                 />
                             </div>
-
-                            {/* Conic border overlay */}
-                            <div className="absolute -inset-1 rounded-full pointer-events-none"
-                                style={{
-                                    background: "conic-gradient(from 0deg, #00ff87 0%, transparent 30%, #00d4ff 60%, transparent 80%, #00ff87 100%)",
-                                    opacity: 0.4,
-                                    borderRadius: "9999px",
-                                    filter: "blur(3px)",
-                                }}
-                            />
 
                             {/* Floating badge */}
                             <motion.div
@@ -142,10 +118,10 @@ export default function About() {
                         <div className="space-y-4 text-[rgba(232,232,240,0.75)] leading-relaxed">
                             <p className="text-lg">
                                 I’m a <span className="text-white font-semibold">Mobile Application Developer</span> with{" "}
-                                <span className="text-[#00ff87] font-semibold">5+ years of experience</span> building
+                                <span className="text-[#a78bfa] font-semibold">5+ years of experience</span> building
                                 scalable and high-performance mobile applications using{" "}
-                                <span className="text-[#00d4ff] font-medium">Android (Kotlin/Java)</span> and{" "}
-                                <span className="text-[#a78bfa] font-medium">Flutter</span>.
+                                <span className="text-[#00ff87] font-medium">Android (Kotlin/Java)</span> and{" "}
+                                <span className="text-[#00d4ff] font-medium">Flutter</span>.
                             </p>
 
                             <p>
@@ -161,8 +137,8 @@ export default function About() {
                             <p>
                                 I’ve also worked as a{" "}
                                 <span className="text-white font-semibold">Lead Mobile Developer</span>,
-                                building a complete grocery delivery platform using Flutter — including
-                                customer and rider applications — launched in multiple cities with real
+                                building a complete grocery delivery platform using Flutter, including
+                                customer and rider applications, launched in multiple cities with real
                                 logistics, warehouse operations, and delivery systems.
                             </p>
 
@@ -172,7 +148,7 @@ export default function About() {
                                 using scalable architectures like{" "}
                                 <span className="text-[#a78bfa] font-medium">MVVM</span> and integrating
                                 modern tools such as{" "}
-                                <span className="text-[#00d4ff] font-medium">Firebase</span>, REST APIs,
+                                <span className="text-orange-300 font-medium">Firebase</span>, REST APIs,
                                 and local databases.
                             </p>
                         </div>
