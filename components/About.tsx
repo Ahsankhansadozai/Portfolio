@@ -66,7 +66,7 @@ export default function About() {
                 </motion.div>
 
                 {/* Two-column layout */}
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-16 items-start">
                     {/* Left: Profile Image */}
                     <motion.div
                         initial={{ opacity: 0, x: -60 }}
@@ -141,30 +141,56 @@ export default function About() {
                     >
                         <div className="space-y-4 text-[rgba(232,232,240,0.75)] leading-relaxed">
                             <p className="text-lg">
-                                Passionate <span className="text-white font-semibold">Android developer</span> with{" "}
-                                <span className="text-[#00ff87] font-semibold">5+ years</span> crafting high-performance
-                                mobile experiences that users love.
+                                I’m a <span className="text-white font-semibold">Mobile Application Developer</span> with{" "}
+                                <span className="text-[#00ff87] font-semibold">5+ years of experience</span> building
+                                scalable and high-performance mobile applications using{" "}
+                                <span className="text-[#00d4ff] font-medium">Android (Kotlin/Java)</span> and{" "}
+                                <span className="text-[#a78bfa] font-medium">Flutter</span>.
                             </p>
+
                             <p>
-                                Specialized in <span className="text-[#00d4ff] font-medium">Kotlin</span>,{" "}
-                                <span className="text-[#00d4ff] font-medium">Jetpack Compose</span>, and scalable{" "}
-                                <span className="text-[#a78bfa] font-medium">MVVM architectures</span>. I don&apos;t just
-                                write code — I craft digital experiences that solve real-world problems at scale.
+                                My journey started with Android development where I worked on utility and
+                                advertisement-based applications, maintaining existing apps, adding new
+                                features, and improving performance. Over time, I progressed to more
+                                advanced products including{" "}
+                                <span className="text-[#00ff87] font-medium">IoT-based systems</span>,
+                                fleet management platforms, and large-scale applications for international
+                                clients.
                             </p>
+
                             <p>
-                                From fintech apps with biometric security to fitness trackers with real-time analytics —
-                                I&apos;ve shipped apps with{" "}
-                                <span className="text-[#00ff87] font-semibold">1M+ downloads</span> across the Play Store.
+                                I’ve also worked as a{" "}
+                                <span className="text-white font-semibold">Lead Mobile Developer</span>,
+                                building a complete grocery delivery platform using Flutter — including
+                                customer and rider applications — launched in multiple cities with real
+                                logistics, warehouse operations, and delivery systems.
+                            </p>
+
+                            <p>
+                                I enjoy building mobile apps from{" "}
+                                <span className="text-[#00ff87] font-medium">concept to production</span>,
+                                using scalable architectures like{" "}
+                                <span className="text-[#a78bfa] font-medium">MVVM</span> and integrating
+                                modern tools such as{" "}
+                                <span className="text-[#00d4ff] font-medium">Firebase</span>, REST APIs,
+                                and local databases.
                             </p>
                         </div>
 
                         {/* Tags */}
                         <div className="flex flex-wrap gap-2 pt-2">
-                            {["Clean Architecture", "Test-Driven Dev", "Performance Optimization", "CI/CD", "Code Reviews"].map((tag) => (
-                                <span key={tag} className="glass px-3 py-1.5 rounded-full text-xs font-medium text-[rgba(232,232,240,0.6)] border border-[rgba(255,255,255,0.07)]">
-                                    {tag}
-                                </span>
-                            ))}
+                            {["Android Development",
+                                "Flutter Development",
+                                "Kotlin",
+                                "MVVM Architecture",
+                                "REST API Integration",
+                                "Firebase",
+                                "IoT Applications",
+                                "Mobile App Architecture"].map((tag) => (
+                                    <span key={tag} className="glass px-3 py-1.5 rounded-full text-xs font-medium text-[rgba(232,232,240,0.6)] border border-[rgba(255,255,255,0.07)]">
+                                        {tag}
+                                    </span>
+                                ))}
                         </div>
                     </motion.div>
                 </div>
