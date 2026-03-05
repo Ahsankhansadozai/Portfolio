@@ -9,30 +9,30 @@ const contactLinks = [
         icon: Mail,
         label: "Email",
         value: "ahsanejaz@example.com",
-        href: "mailto:ahsanejaz@example.com",
+        href: "mailto:ahsanejazkhan6@gmail.com",
         color: "#00ff87",
     },
     {
         icon: Linkedin,
         label: "LinkedIn",
         value: "linkedin.com/in/ahsanejaz",
-        href: "https://linkedin.com/in/ahsanejaz",
+        href: "https://www.linkedin.com/in/ahsanejazkhan/",
         color: "#00d4ff",
     },
     {
         icon: Github,
         label: "GitHub",
         value: "github.com/ahsanejaz",
-        href: "https://github.com/ahsanejaz",
+        href: "https://github.com/Ahsankhansadozai",
         color: "#a78bfa",
     },
-    {
-        icon: Twitter,
-        label: "Twitter / X",
-        value: "@ahsanejaz_dev",
-        href: "https://twitter.com/ahsanejaz_dev",
-        color: "#f59e0b",
-    },
+    // {
+    //     icon: Twitter,
+    //     label: "Twitter / X",
+    //     value: "@ahsanejaz_dev",
+    //     href: "https://twitter.com/ahsanejaz_dev",
+    //     color: "#f59e0b",
+    // },
 ];
 
 export default function Contact() {
