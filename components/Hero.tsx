@@ -15,34 +15,28 @@ function useTypingEffect(strings: string[], speed = 80, pause = 1800) {
     const [displayText, setDisplayText] = useState("");
     const [titleIndex, setTitleIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
-    const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     useEffect(() => {
         const current = strings[titleIndex];
 
-        const tick = () => {
+        const timeout = setTimeout(() => {
             if (!isDeleting) {
-                setDisplayText(current.slice(0, displayText.length + 1));
-                if (displayText.length + 1 === current.length) {
-                    timeoutRef.current = setTimeout(() => setIsDeleting(true), pause);
-                    return;
-                }
-                timeoutRef.current = setTimeout(tick, speed);
-            } else {
-                setDisplayText(current.slice(0, displayText.length - 1));
-                if (displayText.length - 1 === 0) {
-                    setIsDeleting(false);
-                    setTitleIndex((i) => (i + 1) % strings.length);
-                    return;
-                }
-                timeoutRef.current = setTimeout(tick, speed / 2);
-            }
-        };
+                setDisplayText(current.substring(0, displayText.length + 1));
 
-        timeoutRef.current = setTimeout(tick, speed);
-        return () => {
-            if (timeoutRef.current) clearTimeout(timeoutRef.current);
-        };
+                if (displayText.length + 1 === current.length) {
+                    setTimeout(() => setIsDeleting(true), pause);
+                }
+            } else {
+                setDisplayText(current.substring(0, displayText.length - 1));
+
+                if (displayText.length === 0) {
+                    setIsDeleting(false);
+                    setTitleIndex((prev) => (prev + 1) % strings.length);
+                }
+            }
+        }, isDeleting ? speed / 2 : speed);
+
+        return () => clearTimeout(timeout);
     }, [displayText, isDeleting, titleIndex, strings, speed, pause]);
 
     return displayText;
@@ -151,10 +145,10 @@ export default function Hero() {
                             transition={{ duration: 0.6, delay: 0.5 }}
                             className="text-[rgba(232,232,240,0.6)] text-lg max-w-xl mb-10 leading-relaxed"
                         >
-                            Crafting high-performance Android experiences with{" "}
-                            <span className="text-[#00ff87] font-medium">Kotlin</span> &{" "}
-                            <span className="text-[#00d4ff] font-medium">Jetpack Compose</span>.
-                            Turning complex problems into elegant mobile solutions.
+                            Mobile App Developer specializing in{" "}
+                            <span className="text-[#00ff87] font-medium">Android (Kotlin)</span> &{" "}
+                            <span className="text-[#00d4ff] font-medium">Flutter</span>{" "}
+                            building scalable, high-performance apps used in real-world products.
                         </motion.p>
 
                         <motion.div
@@ -201,9 +195,9 @@ export default function Hero() {
                                 <span className="text-[#00d4ff]">fun </span>
                                 <span className="text-[#00ff87]">buildAmazingApp</span>
                                 <span className="text-white">() {"{"}</span><br />
-                                <span className="ml-4 text-[rgba(232,232,240,0.4)]">  val passion = </span>
+                                <span className="ml-4 text-[rgba(232,232,240,0.4)]">  val <span className="text-purple-300">passion</span> = </span>
                                 <span className="text-[#ffb86c]">true</span><br />
-                                <span className="ml-4 text-[rgba(232,232,240,0.4)]">  val years = </span>
+                                <span className="ml-4 text-[rgba(232,232,240,0.4)]">  val <span className="text-orange-300">years</span> = </span>
                                 <span className="text-[#bd93f9]">5</span><br />
                                 <span className="ml-4 text-[rgba(232,232,240,0.4)]">  return <span className="text-[#00ff87]">Masterpiece</span><span className="text-white">()</span></span><br />
                                 <span className="text-white">{"}"}</span>
@@ -245,7 +239,7 @@ export default function Hero() {
                                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
                                 className="absolute -bottom-2 -left-4 glass px-3 py-1.5 rounded-full text-xs font-bold text-[#00d4ff]"
                             >
-                                ✦ Compose
+                                ✦ Flutter
                             </motion.div>
                         </div>
                     </motion.div>
