@@ -157,7 +157,7 @@ export default function Hero() {
                             transition={{ duration: 0.6, delay: 0.65 }}
                             className="flex flex-wrap gap-4"
                         >
-                            <motion.button
+                            {/* <motion.button
                                 onClick={scrollToProjects}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.97 }}
@@ -165,7 +165,7 @@ export default function Hero() {
                             >
                                 <span>View My Work</span>
                                 <ArrowRight size={16} className="relative z-10" />
-                            </motion.button>
+                            </motion.button> */}
 
                             <motion.a
                                 href="/resume.pdf"
