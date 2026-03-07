@@ -4,69 +4,99 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Briefcase, Calendar, MapPin } from "lucide-react";
 
-const experiences = [
+interface Experience {
+    role: string;
+    company: string;
+    location: string;
+    duration: string;
+    type: string;
+    color: string;
+    achievements: string[];
+    stack: string[];
+}
+
+const experiences: Experience[] = [
     {
-        role: "Senior Android Developer",
-        company: "TechCorp Inc.",
-        location: "Lahore, Pakistan",
-        duration: "2022 – Present",
-        type: "Full-time",
+        role: "Software Engineer (Contract)",
+        company: "Gisgen Digital Innovation",
+        location: "United Kingdom",
+        duration: "Nov 2023 – Nov 2024",
+        type: "Contract",
         color: "#00ff87",
         achievements: [
-            "Led a team of 4 Android developers building a fintech app used by 500K+ users",
-            "Migrated entire codebase from XML layouts to Jetpack Compose, reducing UI code by 40%",
-            "Architected a scalable MVVM + Clean Architecture foundation with Hilt DI",
-            "Implemented biometric authentication and end-to-end encrypted transactions",
-            "Reduced app startup time by 60% through modularization and lazy loading",
+            "Worked with a UK-based startup delivering freelance and project-based software solutions",
+            "Developed and maintained mobile applications for international clients",
+            "Collaborated remotely with cross-functional teams to deliver scalable mobile products",
+            "Implemented REST API integrations, real-time communication, and secure authentication flows",
+            "Gained experience working in international software development environments",
         ],
-        stack: ["Kotlin", "Compose", "MVVM", "Hilt", "Room", "Coroutines"],
+        stack: ["Android", "Flutter", "Kotlin", "REST APIs", "Firebase", "Git"],
     },
+
     {
-        role: "Android Developer",
-        company: "MobileSoft Solutions",
-        location: "Karachi, Pakistan",
-        duration: "2020 – 2022",
+        role: "Lead Android / Flutter Developer",
+        company: "Farmtohome",
+        location: "Islamabad, Pakistan",
+        duration: "Oct 2022 – Sep 2023",
         type: "Full-time",
         color: "#00d4ff",
         achievements: [
-            "Developed a full-featured e-commerce app from design specs to Play Store launch",
-            "Integrated Razorpay payment gateway with secure PCI-DSS compliant flow",
-            "Improved app performance by 40% via Profiler-guided optimizations",
-            "Built real-time order tracking using WebSockets and Firebase Realtime DB",
-            "Wrote comprehensive unit tests achieving 80%+ code coverage",
+            "Hired as Lead Mobile Developer to build the Farmtohome grocery delivery platform",
+            "Learned Flutter quickly and led development of the platform from scratch",
+            "Developed multiple applications including Customer App and Rider App",
+            "Implemented complete order flow including browsing, checkout, warehouse processing and delivery",
+            "Successfully launched the platform in Islamabad and Peshawar supporting real delivery operations",
         ],
-        stack: ["Kotlin", "Retrofit", "Firebase", "Room", "Coroutines", "Dagger 2"],
+        stack: ["Flutter", "Dart", "REST APIs", "Firebase", "SQLite", "Git"],
     },
+
     {
         role: "Android Developer",
-        company: "StartupXYZ",
+        company: "Metis International",
         location: "Islamabad, Pakistan",
-        duration: "2018 – 2020",
+        duration: "Feb 2021 – Sep 2022",
         type: "Full-time",
         color: "#a78bfa",
         achievements: [
-            "Built a fitness tracking MVP from scratch, launched in 3 months",
-            "Integrated Google Fit API and Health Connect for real-time health metrics",
-            "Implemented push notifications with FCM and custom notification channels",
-            "Set up CI/CD pipeline with GitHub Actions, reducing release cycle by 70%",
-            "Designed offline-first architecture using Room + WorkManager sync strategy",
+            "Worked on large scale IoT based systems for international clients",
+            "Contributed to fleet management system integrated with IoT devices for real-time truck monitoring",
+            "Developed mobile applications for fleet drivers and fleet management operations",
+            "Worked on enterprise level projects for clients including Vodafone Qatar",
+            "Gained strong experience in IoT integrations and large scale mobile systems",
         ],
-        stack: ["Kotlin", "Java", "Google Fit", "FCM", "WorkManager", "LiveData"],
+        stack: ["Kotlin", "Java", "REST APIs", "IoT Systems", "Firebase", "SQLite"],
     },
+
     {
-        role: "Junior Android Developer",
-        company: "AppWorks",
+        role: "Android Developer",
+        company: "Zaryans Group",
         location: "Lahore, Pakistan",
-        duration: "2017 – 2018",
+        duration: "Jun 2021 – Jan 2022",
         type: "Full-time",
         color: "#f59e0b",
         achievements: [
-            "Maintained and enhanced a legacy Java Android codebase with 100K+ users",
-            "Fixed 50+ critical bugs improving app store rating from 3.2 to 4.5 stars",
-            "Wrote unit tests with JUnit and Mockito, establishing first testing baseline",
-            "Participated in Agile sprints, daily standups, and code review culture",
+            "Developed advanced mobile applications including photo editors, video editors and mobile games",
+            "Worked with experienced senior developers building large scale advertisement-based applications",
+            "Contributed to new product development and implementation of innovative app ideas",
+            "Improved application stability and performance through debugging and crash resolution",
         ],
-        stack: ["Java", "Android SDK", "SQLite", "JUnit", "Mockito", "XML"],
+        stack: ["Java", "Kotlin", "Android SDK", "Firebase", "REST APIs"],
+    },
+
+    {
+        role: "Android Developer (Intern)",
+        company: "Taramob Tech",
+        location: "Lahore, Pakistan",
+        duration: "Aug 2020 – May 2021",
+        type: "Internship",
+        color: "#ec4899",
+        achievements: [
+            "Started career as an Android Developer Intern working on advertisement-based mobile apps",
+            "Maintained and improved existing apps including Quran reading and PDF reader applications",
+            "Implemented new features and fixed crashes across multiple production apps",
+            "Gained hands-on experience in Android development, debugging and app maintenance",
+        ],
+        stack: ["Java", "Android SDK", "XML", "Firebase", "SQLite"],
     },
 ];
 

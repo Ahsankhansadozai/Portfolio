@@ -163,7 +163,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== Timeline ===== */
 .timeline-line {
-  background: linear-gradient(to bottom, #00ff87, #00d4ff);
+  background: linear-gradient(
+    to bottom,
+    #00ff87,
+    #00d4ff,
+    #a78bfa,
+    #f59e0b,
+    #ec4899
+  );
 }
 
 /* ===== Skill Bar ===== */
