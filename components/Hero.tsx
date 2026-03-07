@@ -168,7 +168,7 @@ export default function Hero() {
                             </motion.button> */}
 
                             <motion.a
-                                href="/resume.pdf"
+                                href="/Ahsan-Ejaz-Resume.pdf"
                                 download
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.97 }}
