@@ -70,7 +70,7 @@ const experiences: Experience[] = [
     {
         role: "Android Developer",
         company: "Zaryans Group",
-        location: "Lahore, Pakistan",
+        location: "Islamabad, Pakistan",
         duration: "Jun 2021 – Jan 2022",
         type: "Full-time",
         color: "#f59e0b",
@@ -85,8 +85,8 @@ const experiences: Experience[] = [
 
     {
         role: "Android Developer (Intern)",
-        company: "Taramob Tech",
-        location: "Lahore, Pakistan",
+        company: "Teramob Tech",
+        location: "Rawalpindi, Pakistan",
         duration: "Aug 2020 – May 2021",
         type: "Internship",
         color: "#ec4899",
