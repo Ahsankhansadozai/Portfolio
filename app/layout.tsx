@@ -26,19 +26,6 @@ export const metadata: Metadata = {
     "Ahsan Ejaz",
   ],
   authors: [{ name: "Ahsan Ejaz" }],
-  openGraph: {
-    title: "Ahsan Ejaz | Senior Android Developer",
-    description:
-      "Senior Android Developer with 5+ years of experience. Kotlin, Jetpack Compose, MVVM specialist.",
-    type: "website",
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ahsan Ejaz | Senior Android Developer",
-    description:
-      "Senior Android Developer with 5+ years of experience. Kotlin, Jetpack Compose, MVVM specialist.",
-  },
 };
 
 export default function RootLayout({
